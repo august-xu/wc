@@ -1,0 +1,22 @@
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <map
+    scale='16'
+      id="myMap"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+     markers="{{markers}}"
+      style="width: 100%; height:200px;"
+      show-location
+    ></map>
+  </view>
+  
+  <view class='container' wx:for="{{markers}}">
+    <view class="wcname" bindtap="openLocation" data-wc="{{item}}">{{item.name}}</view>
+    <view class="wcaddress"> 
+      <view class='address' bindtap="openLocation" data-wc="{{item}}">{{item.address}}</view> 
+      <view class="wcdistance" bindtap="openLocation" data-wc="{{item}}">距离:{{item.distance}}米</view>
+    </view> 
+    <view class="line"></view>
+</view>
+</view>

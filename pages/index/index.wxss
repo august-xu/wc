@@ -1,0 +1,58 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.wcname {
+  font-family: Microsoft Yahei;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-top: 5px;
+  
+}
+
+.container{
+
+
+}
+
+.wcaddress{
+  display: flex;
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 13px;
+  margin-left: 10px;
+  flex-direction: row
+}
+.address {
+  flex: 7;
+  flex-wrap: wrap
+
+}
+.wcdistance{
+  flex: 2;
+}
+.line{
+
+width:100%;
+
+height:2rpx;
+
+background:#aaa;
+
+}
