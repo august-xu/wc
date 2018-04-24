@@ -1,17 +1,27 @@
+var app = getApp()
 Page({
   data: {
-    latitude: 39.9219,
-    longitude:116,
+    latitude: 39.90923,
+    longitude: 116.397428,
     markers:[],
-    wcs:[]
+    wcs:[],
+    mapCtx:null
   },
   onReady: function (e) {
+    console.log("111")
     var that=this
     var latitude, longitude
-    this.mapCtx = wx.createMapContext('myMap')
+    var a = wx.createMapContext('parking')
+    this.setData({
+      mapCtx: a
+    })
+
+    console.log(a)
+  
     wx.getLocation({
       type: 'gcj02',
       success: function (res) {
+        console.log("222")
         latitude = res.latitude
         longitude = res.longitude
         that.setData({
@@ -20,7 +30,7 @@ Page({
 
         })
         var url = "https://restapi.amap.com/v3/place/around?key=323ba8b856a9ec89a81102d971a0e7e8&location="
-          + longitude + "," + latitude + "&output=json&radius=3000&types=&keywords=厕所&page=1&extensions=base"
+          + longitude + "," + latitude + "&output=json&radius=3000&types=&keywords=停车场&page=1&extensions=base"
         //console.log(url)
 
         wx.request({
@@ -62,20 +72,31 @@ Page({
       }
     })
   },
- openLocation:function(e){
-   //console.log(e)
-   console.log(e.target.dataset.wc)
-   var wc = e.target.dataset.wc
+  onShow:function(e){
+    var pages=getCurrentPages();
+    var page=pages[pages.length-1]
+    console.log(page)
+    console.log(page.data.markers)
+    console.log(page.data.mapCtx)
 
-   wx.openLocation({
-   
-    latitude: parseFloat(wc.latitude),
-    longitude: parseFloat(wc.longitude),
-    scale:17,
-    name:wc.name,
-    address:wc.address
-  })
+ },
+  openLocation: function (e) {
+    //console.log(e)
+    console.log(e.target.dataset.wc)
+    var wc = e.target.dataset.wc
 
- }
+    wx.openLocation({
+
+      latitude: parseFloat(wc.latitude),
+      longitude: parseFloat(wc.longitude),
+      scale: 17,
+      name: wc.name,
+      address: wc.address
+    })
+
+  },
+  tap:function(e){
+    console.log(e)
+  }
 
 })

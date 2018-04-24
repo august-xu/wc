@@ -1,14 +1,18 @@
+var app=getApp()
 Page({
   data: {
-    latitude: 39.9219,
-    longitude: 116,
+    latitude: 39.90923,
+    longitude: 116.397428,
     markers: [],
-    wcs: []
+    wcs: [],
+    mapCtx:null
   },
   onReady: function (e) {
     var that = this
     var latitude, longitude
-    this.mapCtx = wx.createMapContext('myMap')
+    var b=wx.createMapContext('wc')
+    
+    console.log(b)
     wx.getLocation({
       type: 'gcj02',
       success: function (res) {
@@ -20,7 +24,7 @@ Page({
 
         })
         var url = "https://restapi.amap.com/v3/place/around?key=323ba8b856a9ec89a81102d971a0e7e8&location="
-          + longitude + "," + latitude + "&output=json&radius=3000&types=&keywords=彩票&page=1&extensions=base"
+          + longitude + "," + latitude + "&output=json&radius=3000&types=&keywords=厕所&page=1&extensions=base"
         //console.log(url)
 
         wx.request({
@@ -61,6 +65,9 @@ Page({
 
       }
     })
+  },
+  onShow:function(e){
+    console.log(this.wcs)
   },
   openLocation: function (e) {
     //console.log(e)

@@ -2,7 +2,7 @@
   <view class="page-section page-section-gap">
     <map
     scale='16'
-      id="myMap"
+      id="wc"
       latitude="{{latitude}}"
       longitude="{{longitude}}"
      markers="{{markers}}"

@@ -1,14 +1,16 @@
 <view class="page-body">
   <view class="page-section page-section-gap">
-    <map
+   <map
     scale='16'
-      id="myMap"
+      id="parking"
       latitude="{{latitude}}"
       longitude="{{longitude}}"
      markers="{{markers}}"
       style="width: 100%; height:200px;"
       show-location
+      bindtap="tap"
     ></map>
+
   </view>
   
   <view class='container' wx:for="{{markers}}">

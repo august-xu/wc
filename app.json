@@ -2,9 +2,23 @@
   "pages":[
     "pages/index/index",
     "pages/map/map",
-    "pages/location/location",
     "pages/logs/logs"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "停车场",
+        "iconPath": "image/parking.png",
+        "selectedIconPath": "image/parkingHL.png"
+      },{
+      "pagePath": "pages/map/map",
+      "text": "厕所",
+      "iconPath": "image/wc.png",
+      "selectedIconPath": "image/wcHL.png"
+    }
+   ]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
