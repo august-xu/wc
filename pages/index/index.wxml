@@ -13,7 +13,7 @@
 
   </view>
   
-  <view class='container' wx:for="{{markers}}">
+  <view class='container' wx:for="{{markers}}" wx:key="item">
     <view class="wcname" bindtap="openLocation" data-wc="{{item}}">{{item.name}}</view>
     <view class="wcaddress"> 
       <view class='address' bindtap="openLocation" data-wc="{{item}}">{{item.address}}</view> 

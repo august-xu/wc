@@ -4,24 +4,17 @@ Page({
     latitude: 39.90923,
     longitude: 116.397428,
     markers:[],
-    wcs:[],
-    mapCtx:null
+    wcs:[]
   },
   onReady: function (e) {
-    console.log("111")
     var that=this
     var latitude, longitude
     var a = wx.createMapContext('parking')
-    this.setData({
-      mapCtx: a
-    })
 
-    console.log(a)
   
     wx.getLocation({
       type: 'gcj02',
       success: function (res) {
-        console.log("222")
         latitude = res.latitude
         longitude = res.longitude
         that.setData({
@@ -73,16 +66,11 @@ Page({
     })
   },
   onShow:function(e){
-    var pages=getCurrentPages();
-    var page=pages[pages.length-1]
-    console.log(page)
-    console.log(page.data.markers)
-    console.log(page.data.mapCtx)
 
  },
   openLocation: function (e) {
     //console.log(e)
-    console.log(e.target.dataset.wc)
+    //console.log(e.target.dataset.wc)
     var wc = e.target.dataset.wc
 
     wx.openLocation({
@@ -94,9 +82,5 @@ Page({
       address: wc.address
     })
 
-  },
-  tap:function(e){
-    console.log(e)
   }
-
 })
