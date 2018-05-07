@@ -12,6 +12,8 @@
     ></map>
 
   </view>
+
+  <navigator url='/pages/logs/logs' open-type="navigate" >跳转</navigator>
   
   <view class='container' wx:for="{{markers}}" wx:key="item">
     <view class="wcname" bindtap="openLocation" data-wc="{{item}}">{{item.name}}</view>

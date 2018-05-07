@@ -8,6 +8,14 @@ Page( {
       { name: 'ife-course-demo（百度前端学院）', git: "https://github.com/giscafer/ife-course-demo" }
     ]
   },
+  onShow:function(){
+    wx.showTabBar({
+      success:function(){
+        console.log("tabbar success")
+      }
+    })
+
+  },
   onReady: function() {
     this.clickName();
   },

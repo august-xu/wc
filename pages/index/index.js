@@ -1,4 +1,5 @@
 var app = getApp()
+
 Page({
   data: {
     latitude: 39.90923,
@@ -66,7 +67,6 @@ Page({
     })
   },
   onShow:function(e){
-
  },
   openLocation: function (e) {
     //console.log(e)
