@@ -23,7 +23,7 @@ Page({
           "longitude": longitude
 
         })
-        var url = "https://restapi.amap.com/v3/place/around?key=323ba8b856a9ec89a81102d971a0e7e8&location="
+        var url = "https://restapi.amap.com/v3/place/around?key=323ba8b856a9ec89a81102d971a0e7132&location="
           + longitude + "," + latitude + "&output=json&radius=3000&types=&keywords=停车场&page=1&extensions=base"
         //console.log(url)
 
